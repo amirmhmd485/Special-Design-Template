@@ -74,3 +74,23 @@ stopBtn.addEventListener("click" , function(e){
 })
 // end random backGround image
 
+// start about
+    // no logic Yet
+// end about
+
+// start Skills
+let skillsSection = document.getElementById("skills");
+let alltrans = document.querySelectorAll(".trans")
+window.addEventListener("scroll" , function(e){
+    if(this.scrollY >= skillsSection.offsetTop - 200){
+        alltrans.forEach((trans) => {
+            trans.style.width = trans.getAttribute("data-progress");
+        })
+    }
+    else{
+        alltrans.forEach((trans) => {
+            trans.style.width = 0;
+        })
+    }
+})
+// end Skills
