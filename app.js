@@ -33,10 +33,19 @@ burgerIcon.addEventListener("click" , toggleUl);
 // end BurgerIcon
 
 // start random backGround image
-let srcs = ["../images/wallpaperflare.com_wallpaper (1).jpg" , "../images/wallpaperflare.com_wallpaper (2).jpg" , "../images/wallpaperflare.com_wallpaper (3).jpg",
-    "../images/wallpaperflare.com_wallpaper (4).jpg" , "../images/wallpaperflare.com_wallpaper (5).jpg" , "../images/wallpaperflare.com_wallpaper (6).jpg",
-    "../images/wallpaperflare.com_wallpaper (7).jpg" , "../images/wallpaperflare.com_wallpaper (8).jpg" , "../images/wallpaperflare.com_wallpaper (9).jpg",
-    "../images/wallpaperflare.com_wallpaper (10).jpg" , "../images/wallpaperflare.com_wallpaper (11).jpg" , "../images/wallpaperflare.com_wallpaper (12).jpg"
+let srcs = [
+    "../images/wallpaperflare.com_wallpaper\ \(1\).jpg",
+    "../images/wallpaperflare.com_wallpaper\ \(2\).jpg",
+    "../images/wallpaperflare.com_wallpaper\ \(3\).jpg",
+    "../images/wallpaperflare.com_wallpaper\ \(4\).jpg",
+    "../images/wallpaperflare.com_wallpaper\ \(5\).jpg",
+    "../images/wallpaperflare.com_wallpaper\ \(6\).jpg",
+    "../images/wallpaperflare.com_wallpaper\ \(7\).jpg",
+    "../images/wallpaperflare.com_wallpaper\ \(8\).jpg",
+    "../images/wallpaperflare.com_wallpaper\ \(9\).jpg",
+    "../images/wallpaperflare.com_wallpaper\ \(10\).jpg",
+    "../images/wallpaperflare.com_wallpaper\ \(11\).jpg",
+    "../images/wallpaperflare.com_wallpaper\ \(12\).jpg",
 ]
 
 let landingPage = document.querySelector(".landing");
