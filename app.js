@@ -94,3 +94,17 @@ window.addEventListener("scroll" , function(e){
     }
 })
 // end Skills
+// start gallery
+let allimgs = document.querySelectorAll(".image img");
+let popup = document.querySelector(".popup")
+let img = document.querySelector(".popup .image img")
+allimgs.forEach((image) => {
+    image.addEventListener("click" , function(e){
+        popup.classList.add("show")
+        img.setAttribute("src" , e.target.getAttribute("src"));
+    })
+})
+popup.addEventListener("dblclick" , function(e){
+    popup.classList.remove("show");
+})
+// End gallery
