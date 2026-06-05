@@ -432,3 +432,171 @@ body{
     transform: translateY(0);
 }
 /* End gallery */
+/* start time */
+.time{
+    padding: 15px 0;
+    background-color: #ccc;
+    height: 120vh;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    @media (max-width:768px) {
+        height: 130vh;
+    }
+    header{
+        h2{
+            font-weight: bold;
+            font-size: 30px;
+            color: var(--secondary-color);
+            letter-spacing: 2px;
+            text-align: center;
+            padding:20px;
+        }
+    }
+    .container{
+        height:100%;
+        position: relative;
+        padding: 15px;
+        &::before{
+            content: "";
+            position: absolute;
+            top: 0;
+            left: calc(50% - 1px);
+            width: 2px ;
+            height: 100%;
+            background-color: var(--secondary-color);
+            @media (max-width:992px) {
+                left: 20px;
+            }
+        }
+        .year,.yearfoot{
+            position: absolute;
+            left: calc(50% - 30px);
+            width: 60px;
+            padding: 4px 10px;
+            background-color: var(--secondary-color);
+            color: #fff;
+            text-align: center;
+            @media (max-width:992px) {
+                left: 20px;
+            }
+        }
+        .year{
+            top: 0;
+        }
+        .yearfoot{
+            bottom: 0;
+        }
+        .left{
+            position: absolute;
+            top: 80px;
+            left: 0;
+            @media (max-width:992px) {
+                left: 50px;
+                top: 100px;
+            }
+            &::before{
+                content: "";
+                position: absolute;
+                top:calc(50% - 10px);
+                right: -37px;
+                width: 20px;
+                height: 20px;
+                border-radius: 50%;
+                background-color:white;
+                border: 2px solid var(--secondary-color);
+                @media (max-width:992px) {
+                    left: -40px;
+                }
+            }
+            &::after{
+                content: "";
+                position: absolute;
+                top: calc(50% - 2.5px);
+                right: -9px;
+                border-width: 5px;
+                border-style: solid;
+                border-color: transparent transparent transparent white;
+                @media (max-width:992px) {
+                    right: 100%;
+                    border-color: transparent white transparent transparent;
+                }
+            }
+        }
+        .right{
+            position: absolute;
+            top: 280px;
+            right: 0;
+            @media (max-width:992px) {
+                left: 50px;
+                top: 300px;
+            }
+            &::before{
+                content: "";
+                position: absolute;
+                top:calc(50% - 10px);
+                left: -37px;
+                width: 20px;
+                height: 20px;
+                border-radius: 50%;
+                background-color:white;
+                border: 2px solid var(--secondary-color);
+                @media (max-width:992px) {
+                    left: -40px;
+                }
+            }
+            &::after{
+                content: "";
+                position: absolute;
+                top: calc(50% - 2.5px);
+                left: -9px;
+                border-width: 5px;
+                border-style: solid;
+                border-color: transparent white transparent transparent;
+            }
+        }
+        .left.two{
+            top: 480px;
+            @media (max-width:992px) {
+                top: 500px;
+            }
+        }
+        .right.two{
+            top: 680px;
+            @media (max-width:992px) {
+                top: 700px;
+            }
+        }
+        .left , .right{
+            width: calc(50% - 25px);
+            height: 200px;
+            background-color: white;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            @media (max-width:992px) {
+                width:calc(100% - 100px);
+                height: 150px;
+            }
+            h3{
+                font-weight: bold;
+                color: var(--main-color);
+            }
+            p{
+                line-height: 1.6;
+                color: gray;
+                @media (max-width:992px) {
+                    font-size: 14px;
+                }
+                @media (max-width:768px) {
+                    font-size: 10px;
+                }
+                @media (max-width:368px) {
+                    font-size: 8px;
+                }
+            }
+        }
+    }
+}
+/* end time */
