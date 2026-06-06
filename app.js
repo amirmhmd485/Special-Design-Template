@@ -97,7 +97,7 @@ window.addEventListener("scroll" , function(e){
 // start gallery
 let allimgs = document.querySelectorAll(".image img");
 let popup = document.querySelector(".popup")
-let image = document.querySelector(".popup .image img")
+let img = document.querySelector(".popup .image img")
 allimgs.forEach((image) => {
     image.addEventListener("click" , function(e){
         popup.classList.add("show")
@@ -113,43 +113,44 @@ let nextBtn = document.querySelector(".next");
 let prevBtn = document.querySelector(".prev");
 let p = document.querySelector(".shortcut")
 let h = document.querySelector(".name")
+let testImg = document.querySelector(".test img")
 let allLis = document.querySelectorAll(".bullets li")
 let counter = 0;
 let testArray = [
     {
         name:"amir mhmd",
         text:"DevOps",
-        src:"images/ele.jpg"
+        src:"images/amir.png"
     },
     {
         name:"abdo rady",
         text:"backend",
-        src:"images/five.jpg"
+        src:"images/abdo.png"
     },
     {
         name:"basel mancy",
         text:"Ui&UX",
-        src:"images/nine.jpg"
+        src:"images/basel2.png"
     },
     {
         name:"Kareem Esam",
         text:"frontEnd",
-        src:"images/seven.jpg"
+        src:"images/kareem.png"
     },
     {
         name:"Ahmed Fawzy",
         text:"FrontEnd",
-        src:"images/ten.jpg"
+        src:"images/fawzy.png"
     },
     {
         name:"sayed sayko",
         text:"full stack",
-        src:"images/thr.jpg"
+        src:"images/sayko.png"
     },
     {
         name:"abdo elbtbsy",
         text:"team leader",
-        src:"images/three.jpg"
+        src:"images/sayko2.png"
     }
 ]
 function nextCarosel(e){
@@ -159,6 +160,7 @@ function nextCarosel(e){
     }
     h.innerHTML = testArray[counter]["name"];
     p.innerHTML = testArray[counter]["text"];
+    testImg.setAttribute("src" , `${testArray[counter]["src"]}`)
     checkBullet(counter)
 }
 function previousCarosel(e){
@@ -168,7 +170,7 @@ function previousCarosel(e){
     }
     p.innerHTML = testArray[counter]["text"];
     h.innerHTML = testArray[counter]["name"];
-    img.src = testArray[counter].src;
+    testImg.setAttribute("src", testArray[counter].src);
     checkBullet(counter)
 }
 function checkBullet(counter){
@@ -183,5 +185,7 @@ function checkBullet(counter){
 }
 nextBtn.addEventListener("click" , nextCarosel);
 prevBtn.addEventListener("click" , previousCarosel);
-
+let caroselSlide = setInterval(() => {
+    nextCarosel();
+} , 5000);
 // end testmonials
