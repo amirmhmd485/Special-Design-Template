@@ -151,8 +151,8 @@ body{
     background-position: center;
     display: flex;
     flex-direction: column;
-    gap: 50px;
     align-items: center;
+    gap: 50px;
     height:100vh;
     transition: 0.5s;
     header{
@@ -181,7 +181,7 @@ body{
                 &:active{
                     transform: scale(0.9);
                 }
-                @media (max-width:768px) {
+                @media (max-width:992px) {
                     display: flex;
                 }
             }
@@ -190,9 +190,8 @@ body{
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                gap: 10px;
                 transition: 0.5s;
-                @media (max-width:768px) {
+                @media (max-width:992px) {
                     position: absolute;
                     top: 100%;
                     right: 0;
@@ -223,11 +222,12 @@ body{
                         text-decoration: none;
                         color: white;
                         user-select: none;
+                        font-size: 15px;
                     }
                 }
             }
             ul.open{
-                height:250px;
+                height:400px;
                 display: flex;
                 padding: 0 5px;
             }
@@ -415,7 +415,7 @@ body{
     align-items: center;
     z-index: 999;
     transition: 0.5s;
-    @media (max-width:368px) {
+    @media (max-width:768px) {
         left: 0;
     }
     .image{
@@ -440,9 +440,6 @@ body{
     display: flex;
     flex-direction: column;
     gap: 40px;
-    @media (max-width:768px) {
-        height: 130vh;
-    }
     header{
         h2{
             font-weight: bold;
@@ -655,7 +652,7 @@ body{
 /* end feature */
 /* start testmonials */
 .testmonials{
-    padding: 15px;
+    padding: 40px 15px;
     display: flex;
     flex-direction: column;
     gap: 100px;
@@ -687,6 +684,10 @@ body{
             top: calc(50% + 25px);
             cursor: pointer;
             transition: 0.5s;
+            @media (max-width:768px) {
+                width: 35px;
+                height: 35px;
+            }
         }
         .prev{
             transform: rotate(-135deg);
