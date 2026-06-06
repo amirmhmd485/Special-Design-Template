@@ -222,3 +222,17 @@ submitBtn.addEventListener("click" , function(e){
     return e;
 })
 // End contact
+// start scrolltop
+let scTop = document.querySelector(".scrolltop");
+scTop.addEventListener("click" , function(e){
+    window.scrollTo({top:0,left:0,behavior:"smooth"})
+})
+window.addEventListener("scroll" , function(e){
+    if(this.scrollY >= 100){
+        scTop.classList.add("show");
+    }
+    else{
+        scTop.classList.remove("show");
+    }
+})
+// end scrolltop
