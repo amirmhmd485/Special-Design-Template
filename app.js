@@ -97,7 +97,7 @@ window.addEventListener("scroll" , function(e){
 // start gallery
 let allimgs = document.querySelectorAll(".image img");
 let popup = document.querySelector(".popup")
-let img = document.querySelector(".popup .image img")
+let image = document.querySelector(".popup .image img")
 allimgs.forEach((image) => {
     image.addEventListener("click" , function(e){
         popup.classList.add("show")
@@ -108,3 +108,80 @@ popup.addEventListener("dblclick" , function(e){
     popup.classList.remove("show");
 })
 // End gallery
+// start testmonials
+let nextBtn = document.querySelector(".next");
+let prevBtn = document.querySelector(".prev");
+let p = document.querySelector(".shortcut")
+let h = document.querySelector(".name")
+let allLis = document.querySelectorAll(".bullets li")
+let counter = 0;
+let testArray = [
+    {
+        name:"amir mhmd",
+        text:"DevOps",
+        src:"images/ele.jpg"
+    },
+    {
+        name:"abdo rady",
+        text:"backend",
+        src:"images/five.jpg"
+    },
+    {
+        name:"basel mancy",
+        text:"Ui&UX",
+        src:"images/nine.jpg"
+    },
+    {
+        name:"Kareem Esam",
+        text:"frontEnd",
+        src:"images/seven.jpg"
+    },
+    {
+        name:"Ahmed Fawzy",
+        text:"FrontEnd",
+        src:"images/ten.jpg"
+    },
+    {
+        name:"sayed sayko",
+        text:"full stack",
+        src:"images/thr.jpg"
+    },
+    {
+        name:"abdo elbtbsy",
+        text:"team leader",
+        src:"images/three.jpg"
+    }
+]
+function nextCarosel(e){
+    ++counter;
+    if(counter == testArray.length){
+        counter = 0
+    }
+    h.innerHTML = testArray[counter]["name"];
+    p.innerHTML = testArray[counter]["text"];
+    checkBullet(counter)
+}
+function previousCarosel(e){
+    --counter;
+    if(counter == -1) {
+        counter = testArray.length - 1;
+    }
+    p.innerHTML = testArray[counter]["text"];
+    h.innerHTML = testArray[counter]["name"];
+    img.src = testArray[counter].src;
+    checkBullet(counter)
+}
+function checkBullet(counter){
+    allLis.forEach((li) => {
+        if(li.getAttribute("data-index") == counter){
+            allLis.forEach((l) => {
+                l.classList.remove("active");
+            })
+            li.classList.add("active");
+        }
+    })
+}
+nextBtn.addEventListener("click" , nextCarosel);
+prevBtn.addEventListener("click" , previousCarosel);
+
+// end testmonials
