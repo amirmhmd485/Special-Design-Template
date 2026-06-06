@@ -189,3 +189,36 @@ let caroselSlide = setInterval(() => {
     nextCarosel();
 } , 5000);
 // end testmonials
+// start contact
+let nameField = document.getElementById("name")
+let emailField = document.getElementById("email")
+let phoneField = document.getElementById("phone")
+let messageField = document.querySelector("textarea")
+let submitBtn = document.querySelector(".ch")
+
+let nameRegExp = /[a-zA-Z]/ig;
+let PhoneRegExp = /\d/ig;
+
+function checkkey(e , x){
+    if(!e.key.match(x)){
+        if(e.key == "Backspace"){
+            return e;
+        }
+        else{
+            e.preventDefault()
+        }
+    }
+}
+nameField.addEventListener("keydown" , function(e) {
+    checkkey(e , nameRegExp);
+});
+phoneField.addEventListener("keydown" , function(e){
+    checkkey(e , PhoneRegExp);
+});
+submitBtn.addEventListener("click" , function(e){
+    if(nameField.value == "" || phoneField.value == ""  || emailField.value == ""  || messageField.value == "" ){
+        e.preventDefault();
+    }
+    return e;
+})
+// End contact
