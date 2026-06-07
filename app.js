@@ -26,14 +26,9 @@ allColors.forEach((li) => {
     })
 })
 let wordHome = document.querySelector(".word-home")
-let aboutHeader = document.querySelector(".about h2");
-let skillsHeader = document.querySelector(".skills h2");
-let galleryHeader = document.querySelector(".gallery h2");
-let timeHeader = document.querySelector(".time h2");
-let featureHeader = document.querySelector(".feature h2");
-let testmonialsHeader = document.querySelector(".testmonials h2");
-let contactHeader = document.querySelector(".contact h2");
-let arr = [wordHome , aboutHeader , skillsHeader , galleryHeader , timeHeader , featureHeader , testmonialsHeader , contactHeader];
+
+let allh2 = Array.from(document.querySelectorAll("header h2"));
+let arr = [...allh2 , wordHome];
 function changeColor(li){
     arr.forEach((element) => {
         element.style.color = li.getAttribute("data-color");
