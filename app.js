@@ -13,6 +13,47 @@ function toggleOffcanvas() {
     }
 }
 settingBtn.addEventListener("click", toggleOffcanvas);
+
+let allColors = document.querySelectorAll(".colors ul li")
+allColors.forEach((li) => {
+    li.addEventListener("click" , function(e){
+        allColors.forEach((l) => {
+            l.classList.remove("active");
+        })
+        li.classList.add("active");
+        changeColor(li);
+        saveColor(li);
+    })
+})
+let wordHome = document.querySelector(".word-home")
+let aboutHeader = document.querySelector(".about h2");
+let skillsHeader = document.querySelector(".skills h2");
+let galleryHeader = document.querySelector(".gallery h2");
+let timeHeader = document.querySelector(".time h2");
+let featureHeader = document.querySelector(".feature h2");
+let testmonialsHeader = document.querySelector(".testmonials h2");
+let contactHeader = document.querySelector(".contact h2");
+let arr = [wordHome , aboutHeader , skillsHeader , galleryHeader , timeHeader , featureHeader , testmonialsHeader , contactHeader];
+function changeColor(li){
+    arr.forEach((element) => {
+        element.style.color = li.getAttribute("data-color");
+    })
+}
+function saveColor(li){
+    localStorage.setItem("color" , li.getAttribute("data-color"));
+}
+window.addEventListener("load" ,getColor)
+function getColor(){
+    arr.forEach((element) => {
+        element.style.color = localStorage.getItem("color");
+    })
+}
+let closeBtn = document.querySelector(".offcanvas button.close")
+function closeOffCanvas(){
+    offcanvas.classList.remove("open");
+    isopen = false;
+}
+closeBtn.addEventListener("click" , closeOffCanvas);
 // end offcanvas
 
 // start BurgerIcon
